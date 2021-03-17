@@ -81,7 +81,7 @@ const App = () => {
         colorOctocat="white"
       />
       <header>
-        <img src="/favicon/favicon-32x32.png" alt="icon" className="logo" />
+        <img src="https://travelingtechguy.github.io/add-chain/favicon/favicon-32x32.png" alt="icon" className="logo" />
         <h1>Add Chain to MetaMask</h1>
       </header>
       <main>
