@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import ForkMeOnGithub from 'fork-me-on-github';
+import './App.css';
 
 const chainsUrl = 'https://chainid.network/chains.json';
 
@@ -71,20 +73,28 @@ const App = () => {
   }, [chains]);
 
   return (
-    <div style={{textAlign: 'center'}}>
+    <div className="App">
+      <ForkMeOnGithub
+        repo="https://github.com/TravelingTechGuy/add-chain"
+        side="right"
+        colorBackground='#282c34'
+        colorOctocat='white'
+      />
       <header>
         <h1>Add Chain to MetaMask</h1>
       </header>
       <main>
         {error &&
           <div>
-            <div style={{background: 'red', color: 'white'}}>{error}</div>
-            <button onClick={() => setError(undefined)}>Clear error</button>
+            <div className="error">{error}</div>
+            <button className="button errorButton" onClick={() => setError(undefined)}>Clear error</button>
+            <p/>
           </div>
         }
-        <div style={{background: 'blue', color: 'white'}}>
+        <div className="network">
           Current network: {currentNetwork !== undefined ? chains[currentNetwork].name : 'Development'}
         </div>
+        <p/>
         {
           chains.length &&
           <select onChange={e => setSelectedChain(e.target.value)}>
@@ -93,7 +103,7 @@ const App = () => {
             }
           </select>
         }
-        {selectedChain && <button onClick={addChain}>Add selected chain</button>}
+        {selectedChain && <button className="button addButton" onClick={addChain}>Add selected chain</button>}
       </main>
     </div>
   );
