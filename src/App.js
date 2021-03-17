@@ -18,8 +18,8 @@ const App = () => {
         params: [{
           chainId: `0x${chainId.toString(16)}`,
           chainName,
-          rpcUrls,
           nativeCurrency,
+          rpcUrls,
           blockExplorerUrls: [infoURL]
         }]
       });
@@ -77,10 +77,11 @@ const App = () => {
       <ForkMeOnGithub
         repo="https://github.com/TravelingTechGuy/add-chain"
         side="right"
-        colorBackground='#7b38d8'
-        colorOctocat='white'
+        colorBackground="#7b38d8"
+        colorOctocat="white"
       />
       <header>
+        <img src="add-chain/favicon/favicon-32x32.png" alt="icon" className="logo" />
         <h1>Add Chain to MetaMask</h1>
       </header>
       <main>
