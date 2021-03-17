@@ -2,14 +2,18 @@
   text-align: center;
 }
 
-.network {
-  background-color: #282c34;
+.segment {
   color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.network {
+  background-color: #7b38d8;  
 }
 
 .error {
   background-color: tomato;
-  color: white
 }
 
 .button {

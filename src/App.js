@@ -77,7 +77,7 @@ const App = () => {
       <ForkMeOnGithub
         repo="https://github.com/TravelingTechGuy/add-chain"
         side="right"
-        colorBackground='#282c34'
+        colorBackground='#7b38d8'
         colorOctocat='white'
       />
       <header>
@@ -86,24 +86,34 @@ const App = () => {
       <main>
         {error &&
           <div>
-            <div className="error">{error}</div>
-            <button className="button errorButton" onClick={() => setError(undefined)}>Clear error</button>
-            <p/>
+            <div className="segment error">{error}</div>
+            <button
+              className="button errorButton"
+              onClick={() => setError(undefined)}>
+                Clear error and try again
+            </button>
           </div>
         }
-        <div className="network">
+        <div className="segment network">
           Current network: {currentNetwork !== undefined ? chains[currentNetwork].name : 'Development'}
         </div>
-        <p/>
-        {
-          chains.length &&
-          <select onChange={e => setSelectedChain(e.target.value)}>
-            {
-              chains.map(({name, shortName}, i) => <option value={i} key={shortName}>{name}</option>)
-            }
-          </select>
-        }
-        {selectedChain && <button className="button addButton" onClick={addChain}>Add selected chain</button>}
+        <div>
+          {
+            chains.length &&
+            <select onChange={e => setSelectedChain(e.target.value)}>
+              {
+                chains.map(({name, shortName}, i) => <option value={i} key={shortName}>{name}</option>)
+              }
+            </select>
+          }
+          {selectedChain &&
+            <button
+              className="button addButton"
+              onClick={addChain}>
+                Add selected chain
+            </button>
+          }
+        </div>
       </main>
     </div>
   );
