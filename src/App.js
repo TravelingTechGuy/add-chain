@@ -9,6 +9,7 @@ const App = () => {
   const [selectedChain, setSelectedChain] = useState(undefined);
   const [error, setError] = useState(undefined);
   const [currentNetwork, setCurrentNetwork] = useState(undefined);
+  const [showChainData, setShowChainData] = useState(false);
 
   const addChain = async () => {
     const {chainId, name: chainName, rpc: rpcUrls, nativeCurrency, infoURL} = chains[selectedChain];
@@ -108,11 +109,25 @@ const App = () => {
             </select>
           }
           {selectedChain &&
-            <button
-              className="button addButton"
-              onClick={addChain}>
-                Add selected chain
-            </button>
+            <>
+              <button
+                className="button addButton"
+                onClick={addChain}>
+                  Add selected chain
+              </button>
+              <button 
+                className="button chainButton"
+                onClick={() => setShowChainData(!showChainData)}>
+                  {showChainData ? 'Hide': 'Show'} chain data
+              </button>
+              {showChainData &&
+                <div className="chainData">
+                  <code>
+                    <pre>{JSON.stringify(chains[selectedChain], null, 2)}</pre>
+                  </code>
+                </div>
+              }
+            </>
           }
         </div>
       </main>
