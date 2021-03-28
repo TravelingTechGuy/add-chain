@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ForkMeOnGithub from 'fork-me-on-github';
+import Bridges from './Bridges';
 import './App.css';
 
 const chainsUrl = 'https://chainid.network/chains.json';
@@ -13,9 +14,11 @@ const App = () => {
 
   const addChain = async () => {
     const {chainId, name: chainName, rpc: rpcUrls, nativeCurrency, infoURL} = chains[selectedChain];
+    const method = [1, 3, 4, 42, 420].includes(chainId) ? 'wallet_updateEthereumChain' : 'wallet_addEthereumChain';
+    //const method = 'wallet_addEthereumChain';
     try {
       await window.ethereum.request({
-        method: 'wallet_addEthereumChain',
+        method,
         params: [{
           chainId: `0x${chainId.toString(16)}`,
           chainName,
@@ -118,7 +121,7 @@ const App = () => {
               <button 
                 className="button chainButton"
                 onClick={() => setShowChainData(!showChainData)}>
-                  {showChainData ? 'Hide': 'Show'} chain data
+                  {showChainData ? 'Hide': 'Show'} Chain data
               </button>
               {showChainData &&
                 <div className="chainData">
@@ -130,6 +133,8 @@ const App = () => {
             </>
           }
         </div>
+        <hr/>
+        <Bridges />
       </main>
     </div>
   );

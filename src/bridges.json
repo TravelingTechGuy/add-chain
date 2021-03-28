@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Matic Wallet Bridge",
+    "edge1": "Ethereum",
+    "edge2": "Matic",
+    "url": "https://https://wallet.matic.network/bridge/"
+  },
+  {
+    "name": "xDai Omnibridge",
+    "edge1": "Ethereum",
+    "edge2": "xDai",
+    "url": "https://bridge.xdaichain.com/"
+  },
+  {
+    "name": "xDai/Matic Bridge",
+    "edge1": "xDai",
+    "edge2": "Matic",
+    "url": "https://xdai-matic-connext.vercel.app/",
+    "comment": "Can only transfer DAI"
+  },
+  {
+    "name": "Omnibridge",
+    "edge1": "xDai",
+    "edge2": "Binance Smart Chain",
+    "url": "https://bsc-to-xdai-omnibridge.web.app/",
+    "comment": "Wraps stablecoin. Use https://component.finance/ to unwrap"
+  },
+  {
+    "name": "Binance Bridge",
+    "edge1": "Ethereum",
+    "edge2":"Binance Smart Chain",
+    "url": "https://www.binance.org/en/bridge"
+  }
+]
