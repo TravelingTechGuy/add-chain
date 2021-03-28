@@ -23,7 +23,7 @@
     "edge1": "xDai",
     "edge2": "Binance Smart Chain",
     "url": "https://bsc-to-xdai-omnibridge.web.app/",
-    "comment": "Wraps stablecoin. Use https://component.finance/ to unwrap"
+    "comment": "Wraps stablecoins. Use https://component.finance/ to unwrap"
   },
   {
     "name": "Binance Bridge",

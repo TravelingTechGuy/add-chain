@@ -27,7 +27,16 @@ const Bridges = () => {
   return (
     <div>
       <h2>Find a bridge between chains</h2>
-      {error && <div className="segment error">{error}</div>}
+      {error &&
+          <div>
+            <div className="segment error">{error}</div>
+            <button
+              className="button errorButton"
+              onClick={() => setError(undefined)}>
+                Clear error and try again
+            </button>
+          </div>
+        }
       From:&nbsp;
       <select onChange={e => setEdge1(e.target.value)}>
         <option value="">Select "From" chain</option>

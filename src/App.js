@@ -86,9 +86,10 @@ const App = () => {
       />
       <header>
         <img src="https://travelingtechguy.github.io/add-chain/favicon/favicon-32x32.png" alt="icon" className="logo" />
-        <h1>Add Chain to MetaMask</h1>
+        <h1>MetaMask Chains</h1>
       </header>
       <main>
+        <h2>Add a new chain to your MetaMask</h2>
         {error &&
           <div>
             <div className="segment error">{error}</div>
