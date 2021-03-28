@@ -69,7 +69,9 @@ const Bridges = () => {
           {bridge.comment && <><br/><b>Comment:</b> {bridge.comment}</>}
         </div>
       }
-      <img style={{marginTop: '20px'}} src={drawing} alt="bridges visualization" />
+      <div className="drawing">
+        <img src={drawing} alt="bridges visualization" />
+      </div>
     </div>
   )
 };

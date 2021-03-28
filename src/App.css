@@ -56,3 +56,8 @@ hr {
   border: 1px solid dodgerblue;
   border-radius: 10px;
 }
+
+.drawing {
+  text-align: center;
+  margin-top: 20px;
+}
