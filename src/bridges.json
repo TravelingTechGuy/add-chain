@@ -30,5 +30,12 @@
     "edge1": "Ethereum",
     "edge2":"Binance Smart Chain",
     "url": "https://www.binance.org/en/bridge"
+  },
+  {
+    "name": "Fantom Bridge",
+    "edge1": "Fantom",
+    "edge2": "Ethereum",
+    "url": "https://bnbridge.exchange/",
+    "comment": "All bridge transactions incur a fee of 100 FTM, deducted from the transfer amount"
   }
 ]

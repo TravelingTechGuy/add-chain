@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import bridges from './bridges.json';
+import drawing from './bridges.svg';
 
 const Bridges = () => {
   const [edge1, setEdge1] = useState(undefined);
@@ -7,6 +8,15 @@ const Bridges = () => {
   const [bridge, setBridge] = useState(undefined);
   const [error, setError] = useState(undefined);
   
+  const edgesList = ((() => {
+    let edges = [];
+    bridges.forEach(b => {
+      edges.push(b.edge1);
+      edges.push(b.edge2);
+    });
+    return [...new Set(edges)].sort();
+  })());
+
   const findBridge = () => {
     try {
       setError(undefined);
@@ -40,18 +50,12 @@ const Bridges = () => {
       From:&nbsp;
       <select onChange={e => setEdge1(e.target.value)}>
         <option value="">Select "From" chain</option>
-        <option value="Ethereum">Ethereum</option>
-        <option value="xDai">xDai</option>
-        <option value="Binance Smart Chain">Binance Smart Chain</option>
-        <option value="Matic">Matic</option>
+        {edgesList.map(e => <option value={e} key={e}>{e}</option>)}
       </select>
       &nbsp;&nbsp;To:&nbsp;
       <select onChange={e => setEdge2(e.target.value)}>
         <option value="">Select "To" chain</option>
-        <option value="Ethereum">Ethereum</option>
-        <option value="xDai">xDai</option>
-        <option value="Binance Smart Chain">Binance Smart Chain</option>
-        <option value="Matic">Matic</option>
+        {edgesList.map(e => <option value={e} key={e}>{e}</option>)}
       </select>
       &nbsp;&nbsp;
       <button 
@@ -65,6 +69,7 @@ const Bridges = () => {
           {bridge.comment && <><br/><b>Comment:</b> {bridge.comment}</>}
         </div>
       }
+      <img style={{marginTop: '20px'}} src={drawing} alt="bridges visualization" />
     </div>
   )
 };
