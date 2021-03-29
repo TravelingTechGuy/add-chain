@@ -47,15 +47,15 @@ const Bridges = () => {
     <div>
       <h2>Find a bridge between chains</h2>
       {error &&
-          <div>
-            <div className="segment error">{error}</div>
-            <button
-              className="button errorButton"
-              onClick={() => setError(undefined)}>
-                Clear error and try again
-            </button>
-          </div>
-        }
+        <div>
+          <div className="segment error">{error}</div>
+          <button
+            className="button errorButton"
+            onClick={() => setError(undefined)}>
+              Clear error and try again
+          </button>
+        </div>
+      }
       From:&nbsp;
       <ChainsDropdown
         direction="From"
