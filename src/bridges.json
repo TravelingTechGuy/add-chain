@@ -37,5 +37,11 @@
     "edge2": "Ethereum",
     "url": "https://bnbridge.exchange/",
     "comment": "All bridge transactions incur a fee of 100 FTM, deducted from the transfer amount"
+  },
+  {
+    "name": "Zapper Bridge",
+    "edge1": "Ethereum",
+    "edge2": "Matic",
+    "url": "https://zapper.fi/bridge"
   }
 ]
