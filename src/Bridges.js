@@ -2,12 +2,7 @@ import React, {useState} from 'react';
 import bridges from './bridges.json';
 import drawing from './bridges.svg';
 
-const Bridges = () => {
-  const [edge1, setEdge1] = useState(undefined);
-  const [edge2, setEdge2] = useState(undefined);
-  const [bridge, setBridge] = useState(undefined);
-  const [error, setError] = useState(undefined);
-  
+const ChainsDropdown = ({direction = '', onChange}) => {
   const edgesList = ((() => {
     let edges = [];
     bridges.forEach(b => {
@@ -17,15 +12,29 @@ const Bridges = () => {
     return [...new Set(edges)].sort();
   })());
 
+  return (
+    <select onChange={onChange}>
+      <option value="">Select "{direction}" chain</option>
+      {edgesList.map(e => <option value={e} key={e}>{e}</option>)}
+    </select>
+  );
+};
+
+const Bridges = () => {
+  const [edge1, setEdge1] = useState(undefined);
+  const [edge2, setEdge2] = useState(undefined);
+  const [paths, setPaths] = useState([]);
+  const [error, setError] = useState(undefined);
+  
   const findBridge = () => {
     try {
       setError(undefined);
       if(!edge1) throw new Error('Plaese select "from" chain');
       if(!edge2) throw new Error('Plaese select "to" chain');
       if(edge1 === edge2) throw new Error('Plaese select 2 different chains');
-      const bridge = bridges.find(b => (b.edge1 === edge1 && b.edge2 === edge2) || (b.edge1 === edge2 && b.edge2 === edge1));
-      setBridge(bridge);
-      if(!bridge) {
+      const paths = bridges.filter(b => (b.edge1 === edge1 && b.edge2 === edge2) || (b.edge1 === edge2 && b.edge2 === edge1));
+      setPaths(paths);
+      if(!paths.length) {
         throw new Error(`Couldn't find bridge between ${edge1} and ${edge2} - try a different route`);
       }
     }
@@ -48,26 +57,31 @@ const Bridges = () => {
           </div>
         }
       From:&nbsp;
-      <select onChange={e => setEdge1(e.target.value)}>
-        <option value="">Select "From" chain</option>
-        {edgesList.map(e => <option value={e} key={e}>{e}</option>)}
-      </select>
+      <ChainsDropdown
+        direction="From"
+        onChange={e => setEdge1(e.target.value)} 
+      />
       &nbsp;&nbsp;To:&nbsp;
-      <select onChange={e => setEdge2(e.target.value)}>
-        <option value="">Select "To" chain</option>
-        {edgesList.map(e => <option value={e} key={e}>{e}</option>)}
-      </select>
+      <ChainsDropdown
+        direction="To"
+        onChange={e => setEdge2(e.target.value)} 
+      />
       &nbsp;&nbsp;
       <button 
         className="button chainButton"
         onClick={findBridge}>
           Find bridge
       </button>
-      {bridge &&
-        <div className="chainData">
-          Use the <b>{bridge.name}</b> at <a target="_blank" rel="noreferrer" href={bridge.url}>{bridge.url}</a>
-          {bridge.comment && <><br/><b>Comment:</b> {bridge.comment}</>}
-        </div>
+      {
+        paths.length ? 
+          paths.map(p => 
+            <div className="chainData">
+              Use the <b>{p.name}</b> at <a target="_blank" rel="noreferrer" href={p.url}>{p.url}</a>
+              {p.comment && <><br/><b>Comment:</b> {p.comment}</>}
+            </div>
+          )
+        :
+          null
       }
       <div className="drawing">
         <img src={drawing} alt="bridges visualization" />
