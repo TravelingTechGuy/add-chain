@@ -76,7 +76,7 @@ const Bridges = () => {
         paths.length ? 
           paths.map(p => 
             <div className="chainData">
-              Use the <b>{p.name}</b> at <a target="_blank" rel="noreferrer" href={p.url}>{p.url}</a>
+              Use <b>{p.name}</b> at <a target="_blank" rel="noreferrer" href={p.url}>{p.url}</a>
               {p.comment && <><br/><b>Comment:</b> {p.comment}</>}
             </div>
           )

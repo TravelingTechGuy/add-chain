@@ -3,20 +3,27 @@
     "name": "Matic Wallet Bridge",
     "edge1": "Ethereum",
     "edge2": "Matic",
-    "url": "https://https://wallet.matic.network/bridge/"
+    "url": "https://wallet.matic.network/bridge/"
   },
   {
-    "name": "xDai Omnibridge",
+    "name": "Zapper Bridge",
+    "edge1": "Ethereum",
+    "edge2": "Matic",
+    "url": "https://zapper.fi/bridge",
+    "comment": "Currently only works in one direction ETH->Matic"
+  },
+  {
+    "name": "xDai Bridge",
     "edge1": "Ethereum",
     "edge2": "xDai",
     "url": "https://bridge.xdaichain.com/"
   },
   {
-    "name": "xDai/Matic Bridge",
+    "name": "xPollinate",
     "edge1": "xDai",
     "edge2": "Matic",
-    "url": "https://xdai-matic-connext.vercel.app/",
-    "comment": "Can only transfer DAI"
+    "url": "https://www.xpollinate.io/",
+    "comment": "Currently supports DAI, USDC, USDT transfers only"
   },
   {
     "name": "Omnibridge",
@@ -29,7 +36,8 @@
     "name": "Binance Bridge",
     "edge1": "Ethereum",
     "edge2":"Binance Smart Chain",
-    "url": "https://www.binance.org/en/bridge"
+    "url": "https://www.binance.org/en/bridge",
+    "comment": "cannot be accessed from the US (VPN required)"
   },
   {
     "name": "Fantom Bridge",
@@ -37,11 +45,5 @@
     "edge2": "Ethereum",
     "url": "https://bnbridge.exchange/",
     "comment": "All bridge transactions incur a fee of 100 FTM, deducted from the transfer amount"
-  },
-  {
-    "name": "Zapper Bridge",
-    "edge1": "Ethereum",
-    "edge2": "Matic",
-    "url": "https://zapper.fi/bridge"
   }
 ]
