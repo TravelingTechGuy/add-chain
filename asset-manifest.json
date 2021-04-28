@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/add-chain/static/css/main.2132a5dd.chunk.css",
-    "main.js": "/add-chain/static/js/main.3a2598f1.chunk.js",
-    "main.js.map": "/add-chain/static/js/main.3a2598f1.chunk.js.map",
+    "main.css": "/add-chain/static/css/main.26bacdff.chunk.css",
+    "main.js": "/add-chain/static/js/main.509f1f62.chunk.js",
+    "main.js.map": "/add-chain/static/js/main.509f1f62.chunk.js.map",
     "runtime-main.js": "/add-chain/static/js/runtime-main.8b70f4ca.js",
     "runtime-main.js.map": "/add-chain/static/js/runtime-main.8b70f4ca.js.map",
     "static/js/2.b7d1ef1b.chunk.js": "/add-chain/static/js/2.b7d1ef1b.chunk.js",
     "static/js/2.b7d1ef1b.chunk.js.map": "/add-chain/static/js/2.b7d1ef1b.chunk.js.map",
     "index.html": "/add-chain/index.html",
-    "static/css/main.2132a5dd.chunk.css.map": "/add-chain/static/css/main.2132a5dd.chunk.css.map",
+    "static/css/main.26bacdff.chunk.css.map": "/add-chain/static/css/main.26bacdff.chunk.css.map",
     "static/js/2.b7d1ef1b.chunk.js.LICENSE.txt": "/add-chain/static/js/2.b7d1ef1b.chunk.js.LICENSE.txt",
     "static/media/bridges.8abd48af.svg": "/add-chain/static/media/bridges.8abd48af.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8b70f4ca.js",
     "static/js/2.b7d1ef1b.chunk.js",
-    "static/css/main.2132a5dd.chunk.css",
-    "static/js/main.3a2598f1.chunk.js"
+    "static/css/main.26bacdff.chunk.css",
+    "static/js/main.509f1f62.chunk.js"
   ]
 }
